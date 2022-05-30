@@ -24,4 +24,30 @@ class Song(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Book(models.Model):
+    title = models.CharField(max_length=30)
+    genre = models.CharField(max_length=30)
+    writer = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.author
+
+class Author(models.Model):
+    name = models.ForeignKey(Book, on_delete=models.CASCADE)
+    dob = models.DateField()
+
+    def __str__(self):
+        return self.name
+
+
+
+
+class Snippet(models.Model):
+    created = models.DateField(auto_now_add=True)
+    title = models.CharField(max_length=100, blank=True, default='')
+    code = models.TextField()
+    linenos = models.BooleanField(default=False)
+
     

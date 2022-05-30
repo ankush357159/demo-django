@@ -26,6 +26,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'student',
+    'rest_framework',
+    'demo',
+    'blog'
+
 ]
 
 MIDDLEWARE = [
@@ -59,6 +63,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'demo.wsgi.application'
+
+DEFAULT_AUTO_FIELD='django.db.models.AutoField' 
 
 
 # Database
